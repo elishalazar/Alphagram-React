@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
 * {
     box-sizing: border-box;
@@ -263,11 +263,6 @@ footer a {
 }
 
 
- */
-
-
-
-
 /* ======================================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poppins:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
@@ -305,12 +300,12 @@ footer a {
     border: none;
 }
 
-/* body {
+body {
     font-family: 'Poppins', sans-serif;
     color: var(--color-dark);
     background-color: var(--color-light);
     overflow-x: hidden;
-} */
+}
 
 .containerr {
     width: 80%;
@@ -1043,4 +1038,11 @@ a:hover {
     .Main .container .right {
         display: none;
     }
+}
+
+/* ------------------------Toasts Css--------------------------- */
+#toast-container {
+    top: 30px !important;
+    right: 20px !important;
+    left: auto !important;
 }
