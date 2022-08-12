@@ -286,7 +286,7 @@ footer a {
     --card-padding: 1rem;
 
     --sticky-top-left: 5.4rem;
-    --sticky-top-right: -18rem;
+    --sticky-top-right: 6rem;
 }
 
 *,
@@ -423,13 +423,13 @@ a:hover {
     color: black;
 }
 
-.Main .container .left {
+.Main .containerr .left {
     height: max-content;
     position: sticky;
     top: var(--sticky-top-left);
 }
 
-.Main .container .left .profile {
+.Main .containerr .left .profile {
     padding: var(--card-padding);
     background: var(--color-white);
     border-radius: var(--card-border-radius);
@@ -716,11 +716,11 @@ a:hover {
 
 /* ===========================RIGHT====================== */
 
-.Main .container .right {
+.Main .containerr .right {
     height: max-content;
     position: sticky;
     top: var(--sticky-top-right);
-    bottom: 0;
+    /* bottom: 0; */
 }
 
 .right .messages {
