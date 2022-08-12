@@ -519,7 +519,7 @@ a:hover {
 }
 
 /* ======================NOTIFICATIONS POPUP==================== */
-.left .notifications-popup {
+.notifications-popup {
     position: absolute;
     top: 0;
     left: 110%;
@@ -529,10 +529,18 @@ a:hover {
     padding: var(--card-padding);
     box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60% 25%);
     z-index: 8;
-    display: none;
+    /* display: none !important; */
+    visibility: hidden;
 }
 
-.left .notifications-popup::before {
+#notifications:hover .notifications-popup {
+
+    /* display: block !important; */
+    visibility: visible;
+    /* border: 2px solid rgb(31, 13, 169); */
+}
+
+.notifications-popup::before {
     content: "";
     width: 1.2rem;
     height: 1.2rem;
@@ -543,14 +551,14 @@ a:hover {
     transform: rotate(45deg);
 }
 
-.left .notifications-popup>div {
+.notifications-popup>div {
     display: flex;
     align-items: start;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.left .notifications-popup small {
+.notifications-popup small {
     display: block;
 }
 

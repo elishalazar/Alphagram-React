@@ -61,7 +61,7 @@ function Main() {
 
                         {/* ----------------SIDEBAR---------- */}
                         <div className='sidebar'>
-                            <a className='menu-item active'>
+                            <a className='menu-item '>
                                 <span><AiOutlineHome className='icon' /></span><h3>Home</h3>
                             </a>
                             <a className='menu-item'>
@@ -70,12 +70,12 @@ function Main() {
                             <a className='menu-item' id="notifications">
                                 <span><TiBell className='icon' /><small className='notification-count'>9+</small></span><h3>Notifications</h3>
                                 {/* ---------------------NOTIFICATIONS POPUP----------------- */}
-                                <div className='notifications-popup' style={{ display: menuItems ? "block" : "none" }}>
+                                <div className='notifications-popup ' style={{ display: menuItems ? "block" : "none" }}>
                                     <div>
-                                        <div className='profile-photo'>
+                                        <div className='profile-photo '>
                                             <img src={photo} alt='/' />
                                         </div>
-                                        <div className='notification-body'>
+                                        <div className='notifications-body '>
                                             <b>Keke Benjamin</b>accepted your friend request
                                             <small className='text-muted'>2 DAYS AGO</small>
                                         </div>
@@ -193,7 +193,7 @@ function Main() {
                             </div>
                         </div>
                         {/* ================END OF STORIES================ */}
-                        <div className='Create-post'>
+                        <div className='create-post mt-3'>
                             <div className='profile-photo'>
                                 <img src={photo1} alt='/' />
                             </div>
@@ -202,7 +202,7 @@ function Main() {
                         </div>
 
                         {/* ===================FEEDS=================== */}
-                        <div className='feeds'>
+                        <div className='feeds mt-5'>
                             {/* ===================FEEDS 1=================== */}
                             <div className='feed'>
                                 <div className='head'>
@@ -251,7 +251,7 @@ function Main() {
                                 <div className=' comments text-muted'>View all 277 comments</div>
                             </div>
                             {/* ===================FEEDS 2=================== */}
-                            <div className='feed'>
+                            <div className='feed mt-5 '>
                                 <div className='head'>
                                     <div className='user'>
                                         <div className='profile-photo'>
@@ -299,7 +299,7 @@ function Main() {
                             </div>
 
                             {/* ===================FEEDS 3=================== */}
-                            <div className='feed'>
+                            <div className='feed mt-5'>
                                 <div className='head'>
                                     <div className='user'>
                                         <div className='profile-photo'>
@@ -347,7 +347,7 @@ function Main() {
                             </div>
 
                             {/* ===================FEEDS 4=================== */}
-                            <div className='feed'>
+                            <div className='feed mt-5'>
                                 <div className='head'>
                                     <div className='user'>
                                         <div className='profile-photo'>
@@ -394,7 +394,7 @@ function Main() {
                                 <div className=' comments text-muted'>View all 277 comments</div>
                             </div>
                             {/* ===================FEEDS 5=================== */}
-                            <div className='feed'>
+                            <div className='feed mt-5'>
                                 <div className='head'>
                                     <div className='user'>
                                         <div className='profile-photo'>
@@ -441,7 +441,7 @@ function Main() {
                                 <div className=' comments text-muted'>View all 277 comments</div>
                             </div>
                             {/* ===================FEEDS 6=================== */}
-                            <div className='feed'>
+                            <div className='feed mt-5'>
                                 <div className='head'>
                                     <div className='user'>
                                         <div className='profile-photo'>
@@ -488,7 +488,7 @@ function Main() {
                                 <div className=' comments text-muted'>View all 277 comments</div>
                             </div>
                             {/* ==========================FEED 7======================== */}
-                            <div className='feed'>
+                            <div className='feed mt-5'>
                                 <div className='head'>
                                     <div className='user'>
                                         <div className='profile-photo'>
