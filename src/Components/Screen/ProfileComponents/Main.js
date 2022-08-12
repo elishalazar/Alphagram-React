@@ -46,7 +46,7 @@ function Main() {
             <main className='Main'>
                 <div className='containerr'>
                     {/* ------------LEFT----------------- */}
-                    <div className='Left'>
+                    <div className='left'>
                         <a className='profile'>
                             <div className='profile-photo'>
                                 <img src={photo1} alt='/' />
@@ -193,16 +193,16 @@ function Main() {
                             </div>
                         </div>
                         {/* ================END OF STORIES================ */}
-                        <form className='create-post'>
+                        <div className='Create-post'>
                             <div className='profile-photo'>
                                 <img src={photo1} alt='/' />
                             </div>
                             <input type='text' placeholder="what's on your mind,Diana?" id='create-post' />
                             <input type="submit" value="Post" className='btn btn-primary' />
-                        </form>
+                        </div>
 
                         {/* ===================FEEDS=================== */}
-                        <div className='Feeds'>
+                        <div className='feeds'>
                             {/* ===================FEEDS 1=================== */}
                             <div className='feed'>
                                 <div className='head'>

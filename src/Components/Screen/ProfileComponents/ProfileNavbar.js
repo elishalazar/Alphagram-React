@@ -7,7 +7,7 @@ function ProfileNavbar() {
       <nav className='Navbar_Profile'>
         <div className='containerr'>
           <h2 className='log'>
-            Alphagram
+            nokoSocial
           </h2>
           <div className='Search-bar'>
             <AiOutlineSearch />

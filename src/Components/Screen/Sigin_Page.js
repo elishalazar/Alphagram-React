@@ -110,12 +110,12 @@ const Sigin_Page = () => {
     return (
         <div className="App" >
             <ToastContainer />
-            <div class={`${rightClass && "right-panel-active"} container`}
+            <div className={`${rightClass && "right-panel-active"} container`}
                 id="containers">
-                <div class="form-container sign-up-container">
+                <div className="form-container sign-up-container">
                     <form action="#">
-                        <h1>Create Account</h1>
-                        <span>or use your email for registration</span>
+                        <h1 className="head">Create Account</h1>
+                        <span className="spin">or use your email for registration</span>
 
                         <div className="field">
                             <Box
@@ -154,7 +154,7 @@ const Sigin_Page = () => {
 
                             </Box>
                         </div>
-                        <button
+                        <button className="but"
                             onClick={(e) => {
                                 Signin(e);
                                 showToast();
@@ -168,11 +168,11 @@ const Sigin_Page = () => {
 
 
 
-                <div class="form-container sign-in-container">
+                <div className="form-container sign-in-container">
                     <form action="#">
-                        <h1>Sign in</h1>
+                        <h1 className="head">Sign in</h1>
 
-                        <span>or use your account</span>
+                        <span className="spin">or use your account</span>
 
                         <div className="field">
                             <Box
@@ -202,9 +202,9 @@ const Sigin_Page = () => {
 
                             </Box>
                         </div>
-                        <a href="#">Forgot your password?</a>
+                        <a href="#" className="anchor">Forgot your password?</a>
                         <button
-
+                            className="but"
                             onClick={(e) => {
                                 Login(e);
                                 showToast();
@@ -214,14 +214,14 @@ const Sigin_Page = () => {
                         >Sign In</button>
                     </form>
                 </div>
-                <div class="overlay-container">
-                    <div class="overlay">
-                        <div class="overlay-panel overlay-left">
-                            <h1>Welcome Back!</h1>
-                            <p>
+                <div className="overlay-container">
+                    <div className="overlay">
+                        <div className="overlay-panel overlay-left">
+                            <h1 className="head">Welcome Back!</h1>
+                            <p className="para">
                                 To keep connected with us please login with your personal info
                             </p>
-                            <button class="ghost" id="signIn"
+                            <button className="ghost but" id="signIn"
                                 onClick={() => {
                                     setEmail('')
                                     setName("")
@@ -232,10 +232,10 @@ const Sigin_Page = () => {
                                 Sign In
                             </button>
                         </div>
-                        <div class="overlay-panel overlay-right">
-                            <h1>Hello, Friend!</h1>
-                            <p>Enter your personal details and start journey with us</p>
-                            <button class="ghost" id="signUp"
+                        <div className="overlay-panel overlay-right">
+                            <h1 className="head">Hello, Friend!</h1>
+                            <p className="para">Enter your personal details and start journey with us</p>
+                            <button className="ghost but" id="signUp"
                                 onClick={() => {
 
                                     setEmail('')
