@@ -3,80 +3,70 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate } from "react-router-dom";
-const Login = () => {
-    const navigate = useNavigate()
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+import { useParams } from "react-router-dom";
+
+const NewPassword = () => {
+    const { token } = useParams()
+    console.log(token, 'gfgfgfd');
     const [password, setPassword] = useState('')
 
-    const navigateto = () => {
-        console.log("?????")
-        navigate("/resetpassword")
-    }
+
     const Signin = (e) => {
-        if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-            toast.error("Invalid Email")
-            return
-        }
+
         e.preventDefault()
 
 
-        fetch("/signup", {
+        fetch("/newpassword", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name,
-                email,
-                password
+                password, token
             })
         }).then(res => res.json())
             .then(data => {
                 console.log(data, "fffefrew");
                 if (data.error) {
-                    toast.error(data.error)
+                    toast.error({ html: data.error })
                 }
                 else {
-                    toast.success(data.message);
+                    toast.success({ html: data.message });
                     // history.push('/login')
                 }
 
 
             }).catch(err => {
-                console.log(err);
+                console.log({ ...err })
             })
 
     }
     // ------------------Login function-------------------
 
     const Login = (e) => {
-        if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-            toast.error("Invalid Email")
-            return
-        }
+
         e.preventDefault()
 
 
-        fetch("/signin", {
+
+        fetch("/new-password", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
 
-                email,
-                password
+                password,
+                token
             })
         }).then(res => res.json())
             .then(data => {
                 console.log(data, "fffefrew");
                 if (data.error) {
-                    toast.error(data.error)
+                    toast.error({ html: data.error })
                 }
                 else {
-                    toast.success(data.message);
+                    toast.success({ html: data.message });
                     // history.push('/login')
                 }
 
@@ -108,9 +98,9 @@ const Login = () => {
             <div className={`${rightClass && "right-panel-active"} container`}
                 id="containers">
                 <div className="form-container sign-up-container">
-                    <form action="/">
-                        <h1 className="head">Create Account</h1>
-                        <span className="spin">or use your email for registration</span>
+                    <form action="#">
+                        <h1 className="head">New Password</h1>
+                        <span className="spin">or use new password for registration</span>
 
                         <div className="field">
                             <Box
@@ -121,25 +111,11 @@ const Login = () => {
                                 noValidate
                                 autoComplete="off"
                             >
+
+
                                 <TextField
                                     id="outlined-basic"
-                                    label="Name"
-                                    variant="outlined"
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                />
-                                <TextField
-                                    id="outlined-basic"
-                                    label="Email"
-                                    variant="outlined"
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                                <TextField
-                                    id="outlined-basic"
-                                    label="password"
+                                    label="new password"
                                     variant="outlined"
                                     type="password"
                                     value={password}
@@ -152,10 +128,8 @@ const Login = () => {
                         <button className="but"
                             onClick={(e) => {
                                 Signin(e);
-                                showToast();
-
                             }}
-                        >Sign Up</button>
+                        >Save</button>
 
                     </form>
                 </div>
@@ -164,8 +138,8 @@ const Login = () => {
 
 
                 <div className="form-container sign-in-container">
-                    <form action="/">
-                        <h1 className="head">Sign in</h1>
+                    <form action="#">
+                        <h1 className="head">New Password</h1>
 
                         <span className="spin">or use your account</span>
 
@@ -178,17 +152,10 @@ const Login = () => {
                                 noValidate
                                 autoComplete="off"
                             >
+
                                 <TextField
                                     id="outlined-basic"
-                                    label="Email"
-                                    variant="outlined"
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                                <TextField
-                                    id="outlined-basic"
-                                    label="password"
+                                    label="new password"
                                     variant="outlined"
                                     type="password"
                                     value={password}
@@ -197,7 +164,7 @@ const Login = () => {
 
                             </Box>
                         </div>
-                        <p className=" anchor" onClick={navigateto}>Forgot your password?</p>
+                        <a href="#" className="anchor">Forgot your password?</a>
                         <button
                             className="but"
                             onClick={(e) => {
@@ -206,7 +173,7 @@ const Login = () => {
 
                             }}
 
-                        >Sign In</button>
+                        >Saved Password</button>
                     </form>
                 </div>
                 <div className="overlay-container">
@@ -218,8 +185,7 @@ const Login = () => {
                             </p>
                             <button className="ghost but" id="signIn"
                                 onClick={() => {
-                                    setEmail('')
-                                    setName("")
+
                                     setPassword("")
                                     setRightClass(false);
                                 }}
@@ -233,7 +199,7 @@ const Login = () => {
                             <button className="ghost but" id="signUp"
                                 onClick={() => {
 
-                                    setEmail('')
+
                                     setPassword('')
 
                                     setRightClass(true)
@@ -248,4 +214,5 @@ const Login = () => {
         </div >
     );
 }
-export default Login;
+
+export default NewPassword

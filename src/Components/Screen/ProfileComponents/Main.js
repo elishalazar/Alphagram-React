@@ -70,7 +70,7 @@ function Main() {
                             <a className='menu-item' id="notifications">
                                 <span><TiBell className='icon' /><small className='notification-count'>9+</small></span><h3>Notifications</h3>
                                 {/* ---------------------NOTIFICATIONS POPUP----------------- */}
-                                <div className='notifications-popup ' style={{ display: menuItems ? "block" : "none" }}>
+                                <div className='notifications-popup border border-danger' style={{ display: menuItems ? "block" : "none" }}>
                                     <div>
                                         <div className='profile-photo '>
                                             <img src={photo} alt='/' />
@@ -488,7 +488,7 @@ function Main() {
                                 <div className=' comments text-muted'>View all 277 comments</div>
                             </div>
                             {/* ==========================FEED 7======================== */}
-                            <div className='feed mt-5'>
+                            <div className='feed '>
                                 <div className='head'>
                                     <div className='user'>
                                         <div className='profile-photo'>
